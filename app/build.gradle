@@ -7,7 +7,7 @@ android {
     buildToolsVersion "31.0.0"
 
     defaultConfig {
-        applicationId "com.example.todoapp"
+        applicationId "com.esprit.todoapp"
         minSdkVersion 24
         targetSdkVersion 31
         versionCode 1
@@ -38,10 +38,10 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
     implementation 'androidx.navigation:navigation-fragment:2.3.5'
     implementation 'androidx.navigation:navigation-ui:2.3.5'
-
+    implementation "androidx.drawerlayout:drawerlayout:1.1.1"
     implementation 'androidx.cardview:cardview:1.0.0'
 
-    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
 
@@ -51,15 +51,15 @@ dependencies {
     implementation 'com.allattentionhere:fabulousfilter:0.0.5'
 
     //Third Party Libraries
-    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.google.code.gson:gson:2.8.8'
 
     // database-android room
-    implementation 'androidx.room:room-runtime:2.0.0'
+    implementation 'androidx.room:room-runtime:2.3.0'
 
-    annotationProcessor 'androidx.room:room-compiler:2.0.0'
+    annotationProcessor 'androidx.room:room-compiler:2.3.0'
 
     //Date Picker Dialog
-    implementation 'com.wdullaer:materialdatetimepicker:3.2.0'
+    implementation 'com.wdullaer:materialdatetimepicker:4.2.3'
 
 
 
