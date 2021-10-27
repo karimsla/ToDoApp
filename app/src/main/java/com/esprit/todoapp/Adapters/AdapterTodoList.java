@@ -82,7 +82,7 @@ public class AdapterTodoList extends RecyclerView.Adapter<AdapterTodoList.ViewHo
         holder.tvListAddDate.setText(sdf.format(todoList.getListAddDate()));
 
         holder.ivCircleView.setColorFilter(colors[todoList.getListPriority()], PorterDuff.Mode.SRC_ATOP);
-        //holder.ivCircleView.setBackgroundColor(colors[todoList.getListPriority()]);
+
 
         holder.parentView.setActivated(selected_items.get(position, false));
 

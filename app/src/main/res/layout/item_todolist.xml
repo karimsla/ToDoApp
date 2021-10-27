@@ -32,7 +32,7 @@
                 android:layout_height="@dimen/spacing_xlarge"
                 android:layout_centerInParent="true"
                 android:src="@drawable/circle_border"
-                android:tint="@color/blue_500" />
+                android:tint="@color/purple_500" />
 
             <RelativeLayout
                 android:id="@+id/layoutChecked"

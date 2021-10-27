@@ -59,11 +59,11 @@ public class FragmentTodoListItem extends Fragment implements AAH_FabulousFragme
 
         @Override
         public boolean onQueryTextChange(String newText) {
-            System.out.println("New Text:" + newText);
+
             searchedLists.clear();
             adapterTodoListItem.notifyDataSetChanged();
             for (TodoListItem pp : todoListItems) {
-                if (pp.getListItemName().toUpperCase().contains(newText.toUpperCase(new Locale("tr")))) {
+                if (pp.getListItemName().toUpperCase().contains(newText.toUpperCase(new Locale("en")))) {
                     searchedLists.add(pp);
                 }
             }

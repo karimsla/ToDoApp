@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         gson = new Gson();
 
         if (getIntent().getExtras() != null)
+            //extras bundle saved on signin activity
             user = gson.fromJson(getIntent().getExtras().getString("user"), User.class);
 
         mDrawerLayout = findViewById(R.id.drawer_layout);
@@ -53,18 +54,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         navigationView.setNavigationItemSelectedListener(this);
 
+        //side menu content
         navigationView.setItemIconTintList(null);
-        navigationView.getMenu().findItem(R.id.nav_todolists).getIcon().setColorFilter(getResources().getColor(R.color.blue_500), PorterDuff.Mode.SRC_ATOP);
+        navigationView.getMenu().findItem(R.id.nav_todolists).getIcon().setColorFilter(getResources().getColor(R.color.indigo_600_overlay), PorterDuff.Mode.SRC_ATOP);
         navigationView.getMenu().findItem(R.id.nav_exit).getIcon().setColorFilter(getResources().getColor(R.color.red_500), PorterDuff.Mode.SRC_ATOP);
 
+        //username in header
         TextView tvHeader = navigationView.getHeaderView(0).findViewById(R.id.tvHeader);
         tvHeader.setText(user.getUserName());
 
         openPage("TL");
 
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED || ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE}, 0);
-        }
+
     }
 
     @Override
@@ -135,6 +136,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         Fragment fragment = null;
         Bundle bundle = new Bundle();
+        //send user to fragment
         bundle.putString("user", gson.toJson(user));
         switch (pageCode) {
             case "TL"://TodoList

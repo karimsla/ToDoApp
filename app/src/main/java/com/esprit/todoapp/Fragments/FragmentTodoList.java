@@ -87,9 +87,10 @@ public class FragmentTodoList extends Fragment {
         public boolean onQueryTextChange(String newText) {
             searchedLists.clear();
             adapterTodoList.notifyDataSetChanged();
-            for (TodoList pp : todoLists) {
-                if (pp.getListName().toUpperCase().contains(newText.toUpperCase(new Locale("tr")))) {
-                    searchedLists.add(pp);
+
+            for (TodoList tl : todoLists) {
+                if (tl.getListName().toUpperCase().contains(newText.toUpperCase(new Locale("en")))) {
+                    searchedLists.add(tl);
                 }
             }
             adapterTodoList.notifyDataSetChanged();
@@ -101,6 +102,7 @@ public class FragmentTodoList extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //get the data passed from main activity to this fragment
         if (getArguments() != null) {
             user = new Gson().fromJson(getArguments().getString("user"), User.class);
         }
@@ -120,6 +122,7 @@ public class FragmentTodoList extends Fragment {
                 if (adapterTodoList.getSelectedItemCount() > 0) {
                     enableActionMode(position);
                 } else {
+                    //redirect to items list
                     TodoList todoList = (TodoList) item;
                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
