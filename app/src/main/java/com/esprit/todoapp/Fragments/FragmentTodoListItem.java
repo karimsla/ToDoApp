@@ -63,7 +63,7 @@ public class FragmentTodoListItem extends Fragment implements AAH_FabulousFragme
             searchedLists.clear();
             adapterTodoListItem.notifyDataSetChanged();
             for (TodoListItem pp : todoListItems) {
-                if (pp.getListItemName().toUpperCase().contains(newText.toUpperCase(new Locale("en")))) {
+                if (pp.getListItemName().toUpperCase().contains(newText.toUpperCase())) {
                     searchedLists.add(pp);
                 }
             }
@@ -135,7 +135,7 @@ public class FragmentTodoListItem extends Fragment implements AAH_FabulousFragme
                         di.dismiss();
                         dao.deleteTodoListItem(todoListItem.getListItemId());
                         getTodoListItems();
-                        Toast.makeText(getActivity(), getString(R.string.todoListItemStatusMessage),Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), getString(R.string.todoListItemDeleteMessage),Toast.LENGTH_SHORT).show();
                     }
                 });
                 builder.setNegativeButton(R.string.CANCEL, new DialogInterface.OnClickListener() {
@@ -177,19 +177,7 @@ public class FragmentTodoListItem extends Fragment implements AAH_FabulousFragme
             }
         });
 
-        FloatingActionButton fabFilter = view.findViewById(R.id.fabFilter);
-        filterDialog = FragmentTodoListItemFilter.newInstance();
-        filterDialog.setParentFab(fabFilter);
-        fabFilter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                filterDialog.setCallbacks(FragmentTodoListItem.this);
-                Bundle bundle = new Bundle();
-                bundle.putString("filter", new Gson().toJson(filter));
-                filterDialog.setArguments(bundle);
-                //filterDialog.show( getFragmentManager(), filterDialog.getTag());
-            }
-        });
+
 
         getTodoListItems();
 
@@ -250,6 +238,7 @@ public class FragmentTodoListItem extends Fragment implements AAH_FabulousFragme
         MenuItem searchItem = menu.findItem(R.id.searchBar);
         SearchView searchView = (SearchView) searchItem.getActionView();
         searchView.setQueryHint(getString(R.string.todoListItemSearch));
+
         searchView.setOnQueryTextListener(searchListener);
         searchView.setOnCloseListener(new SearchView.OnCloseListener() {
             @Override
@@ -336,6 +325,7 @@ public class FragmentTodoListItem extends Fragment implements AAH_FabulousFragme
                 );
                 datePicker.setThemeDark(false);
                 datePicker.setAccentColor(getResources().getColor(R.color.colorPrimary));
+                //min date
                 datePicker.setMinDate(cur_calender);
                 datePicker.show(getActivity().getSupportFragmentManager(), "Deadline");
             }

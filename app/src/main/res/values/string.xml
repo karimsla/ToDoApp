@@ -54,7 +54,7 @@
     <string name="todoListItemDesc"><b>Description:</b> %1s</string>
     <string name="todoListItemCreateDate"><b>Create Date:</b> %1s</string>
     <string name="todoListItemRemainingDate">%1s days left.</string>
-    <string name="todoListItemStatusContinue">Continues</string>
+    <string name="todoListItemStatusContinue">In Progress</string>
     <string name="todoListItemStatusCompleted">Completed</string>
     <string name="todoListItemStatusExpired">Expired</string>
     <string name="todolistTitle">To Do List</string>
@@ -65,11 +65,7 @@
     <string name="todoListMoreDelete">Delete</string>
     <string name="todoListMoreShare">Share</string>
 
-    <string name="todolistShareBottomSheetPreview">Pdf Preview</string>
-    <string name="todolistShareBottomSheetEmail">Send Email</string>
 
-    <string name="todolistPdfExportMailSubject">About ToDoList</string>
-    <string name="todolistPdfExportMailInfo">Sending Mail…</string>
     <string name="YES">Yes</string>
     <string name="CANCEL">Cancel</string>
 
@@ -110,22 +106,13 @@
     <string name="todoListFilterKeyword">Type keyword</string>
     <string name="todoListFilterStatus">Status</string>
     <string name="todoListFilterCompleted">Completed</string>
-    <string name="todoListFilterContinued">Continued</string>
+    <string name="todoListFilterContinued">In Progress</string>
     <string name="todoListFilterExpired">Expired</string>
 
-    <string name="pdfStatusCompleted">Completed</string>
-    <string name="pdfStatusContinued">Continued</string>
-    <string name="pdfColumnFirst">Number</string>
-    <string name="pdfColumnSecond">Name</string>
-    <string name="pdfColumnThird">Description</string>
-    <string name="pdfColumnFourth">Deadline</string>
-    <string name="pdfColumnFifth">Create Date</string>
-    <string name="pdfColumnSixth">Status</string>
 
-    <string name="todoListShareCreatePdfMessage">Pdf Creator: %1s</string>
-    <string name="todoListShareSendMailMessage">Sending Mail…</string>
+
     <string name="search">Search</string>
-    <string name="pdfStatusExpired">Expired</string>
+
     <string name="todoListContinuedCount">%1s Tasks</string>
     <string name="signuptitle">Signup</string>
 
